@@ -127,7 +127,7 @@
 				'gf_progressbar_wrapper_'.$form['id']							=> 'gf_progressbar_wrapper_'.static::$unique_id,
 				'gform_page_'.$form['id']										=> 'gform_page_'.static::$unique_id,
 				'gform_fields_'.$form['id']										=> 'gform_fields_'.static::$unique_id,
-				'gform_source_page_number_'.$form['id']						=> 'gform_source_page_number_'.static::$unique_id,
+				//'gform_source_page_number_'.$form['id']						=> 'gform_source_page_number_'.static::$unique_id,
 				'#gform_target_page_number_'.$form['id']						=> '#gform_target_page_number_'.static::$unique_id,
 				'gform_previous_button_'.$form['id']							=> 'gform_previous_button_'.static::$unique_id,
 				'id="wp-input_'.$form['id']										=> 'id="wp-input_'.static::$unique_id,
@@ -136,10 +136,11 @@
 				"id='gform_target_page_number_".$form['id']."'"				=> "id='gform_target_page_number_".static::$unique_id."'",
 				'id="input_'.$form['id'].'_'									=> 'id="input_'.static::$unique_id.'_',
 				'extensions_message_'.$form['id']								=> 'extensions_message_'.static::$unique_id,
-				//"id='gform_uploaded_files_".$form['id']."'"					=> "id='gform_uploaded_files_".static::$unique_id."'",
+				//"id='gform_uploaded_files_".$form['id']."'"					=> "id='gform_uploaded_files_".static::$unique_id."'", // deactivated, as this field is required in original for gravityformsuserregistration addon
 				'if(formId == '.static::$unique_id.') {'						=> 'if(true) {',
 				'gformInitChosenFields'											=> 'sv_gformInitChosenFields',
 				"'#gform_'+form_id+'"											=> "'#gform_".static::$unique_id."'",
+
 				//'gform_browse_button_'.$form['id']							=> 'gform_browse_button_'.static::$unique_id,
 				//'gform_drag_drop_area_'.$form['id']							=> 'gform_drag_drop_area_'.static::$unique_id,
 				//'gform_multifile_upload_'.$form['id']						=> 'gform_multifile_upload_'.static::$unique_id,
