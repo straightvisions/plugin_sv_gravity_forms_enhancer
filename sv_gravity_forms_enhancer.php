@@ -3,7 +3,7 @@
 	Plugin Name: SV Gravity Forms Enhancer
 	Plugin URI: https://straightvisions.com/
 	Description: Improves Gravity Forms in various ways.
-	Version: 1.0.6
+	Version: 1.0.7
 	Author: Matthias Reuter
 	Author URI: https://straightvisions.com
 	Text Domain: sv_gravity_forms_enhancer
@@ -16,8 +16,8 @@
 	require_once('lib/core/core.php');
 
 	class init extends \sv_core\core{
-		const version							= 1006;
-		const version_core_match				= 1000;
+		const version							= 1007;
+		const version_core_match				= 1001;
 
 		public function __construct(){
 			$this->setup(__NAMESPACE__,__FILE__);
