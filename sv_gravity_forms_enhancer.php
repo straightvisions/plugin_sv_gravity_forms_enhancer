@@ -18,6 +18,7 @@
 	class init extends \sv_core\core{
 		const version							= 1007;
 		const version_core_match				= 1001;
+		const section_title						= 'SV Gravity Forms Enhancer';
 
 		public function __construct(){
 			$this->setup(__NAMESPACE__,__FILE__);
