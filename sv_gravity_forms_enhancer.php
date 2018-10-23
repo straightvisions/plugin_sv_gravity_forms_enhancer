@@ -19,6 +19,7 @@
 		const version							= 1008;
 		const version_core_match				= 1004;
 		const section_title						= 'SV Gravity Forms Enhancer';
+		const section_desc						= 'Improves Gravity Forms in various ways';
 
 		public function __construct(){
 			$this->setup(__NAMESPACE__,__FILE__);
