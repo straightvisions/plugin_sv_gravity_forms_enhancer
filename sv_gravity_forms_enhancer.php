@@ -17,11 +17,12 @@
 
 	class init extends \sv_core\core{
 		const version							= 1008;
-		const version_core_match				= 1004;
-		const section_title						= 'SV Gravity Forms Enhancer';
+		const version_core_match				= 1005;
 
 		public function __construct(){
 			$this->setup(__NAMESPACE__,__FILE__);
+			$this->set_section_title('SV Gravity Forms Enhancer');
+			$this->set_section_desc('Improves Gravity Forms in various ways');
 		}
 	}
 
