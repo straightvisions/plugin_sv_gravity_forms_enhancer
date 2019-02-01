@@ -1,11 +1,11 @@
 <?php
 	/**
-	 * @author			Matthias Reuter
+	 * @author			straightvisions GmbH
 	 * @package			sv_gravity_forms_enhancer
-	 * @copyright		2017 Matthias Reuter
+	 * @copyright		2017 straightvisions GmbH
 	 * @link			https://straightvisions.com/
 	 * @since			1.0
-	 * @license			This is no free software. See license.txt or https://straightvisions.com/
+	 * @license			See license.txt or https://straightvisions.com/
 	 */
 
 	namespace sv_gravity_forms_enhancer;
@@ -19,19 +19,36 @@
 		
 		private static $form_count_footer										= 999;
 		private static $unique_id_mapping_footer								= array();
-
+		
+		private $base_path														= false;
+		private $base_url														= false;
+		private $file_path														= false;
+		private $file_url														= false;
+		
 		public function __construct(){
 
 		}
 		/**
 		 * @desc			initialize module
 		 * @return	void
-		 * @author			Matthias Reuter
+		 * @author			straightvisions GmbH
 		 * @since			1.0
 		 */
 		protected function init(){
 			add_filter('gform_get_form_filter', array($this,'form_start'), 9, 2);
 			add_filter('gform_footer_init_scripts_filter', array($this,'form_end'), 10, 3);
+			
+			add_filter('gform_enable_field_label_visibility_settings', '__return_true');
+			add_filter('sv_gravity_forms_enhancer_form_start', array($this,'sv_gravity_forms_enhancer_form_start'), 10, 2);
+			add_filter('sv_gravity_forms_enhancer_form_end', array($this,'sv_gravity_forms_enhancer_form_end'), 10, 2);
+			
+			$this->user_update->init();
+			$this->post_update->init();
+			$this->settings_fields_address->init();
+			$this->settings_scripts_handling->init();
+			$this->settings_user_form->init();
+			$this->settings_disable_entries->init();
+			$this->settings_slugs->init();
 		}
 		public function form_start($form_string, $form){
 			wp_enqueue_script($this->get_name(), $this->get_url_lib_section('frontend', 'js', 'frontend.js'), array('jquery', 'gform_gravityforms'), filemtime($this->get_path_lib_section('frontend', 'js', 'frontend.js')), true);
@@ -50,6 +67,13 @@
 			}
 
 			return $form_string;
+		}
+		public function sv_gravity_forms_enhancer_form_start(string $form_string, string $unique_id): string{
+			$this->init_cache($unique_id);
+			return $this->attach_inline_js($form_string, $unique_id);
+		}
+		public function sv_gravity_forms_enhancer_form_end(string $form_string, string $unique_id): string{
+			return $this->attach_inline_js($form_string, $unique_id);
 		}
 		private function generate_id($form=false, $footer=false){
 			// if form has been submitted, use the submitted ID
@@ -168,11 +192,62 @@
 		/**
 		 * @desc			array of unique mapping IDs with form IDs
 		 * @return	array	list of IDs
-		 * @author			Matthias Reuter
+		 * @author			straightvisions GmbH
 		 * @since			1.0
 		 */
 		public function get_unique_id_mapping(){
 			return static::$unique_id_mapping;
+		}
+		/**
+		 * @desc			setup JS caching paths and URLs
+		 * @return	void
+		 * @author			straightvisions GmbH
+		 * @since			1.0
+		 */
+		private function init_cache(string $unique_id){
+			$this->base_path													= trailingslashit(wp_upload_dir()['basedir']).$this->get_root()->get_prefix().'/';
+			$this->base_url														= trailingslashit(wp_upload_dir()['baseurl']).$this->get_root()->get_prefix().'/';
+			$this->file_path													= $this->base_path.md5($_SERVER['REQUEST_URI']).'_'.$unique_id.'.js';
+			$this->file_url														= $this->base_url.md5($_SERVER['REQUEST_URI']).'_'.$unique_id.'.js';
+			
+			if(!isset($_POST[$this->get_name().'_form_id'])){
+				if(!is_dir($this->base_path)){
+					mkdir($this->base_path);
+				}
+				file_put_contents($this->file_path,'// '.$_SERVER['REQUEST_URI']."\n\n".'console.log("gf_inline_js_loaded");'."\n\n"); // empty file first
+				
+				
+				/*
+				// gf geo - not completed yet
+				global $wp_scripts;
+				$data = $wp_scripts->get_data('gfgeo', 'data');
+				$data = str_replace('gfgeo_gforms = {"'.$form['id'], 'gfgeo_gforms = {"'.static::$unique_id, $data);
+				$data = str_replace('"formId":'.$form['id'], '"formId":'.static::$unique_id, $data);
+				$wp_scripts->add_data('gfgeo', 'data', '');
+
+				file_put_contents($this->file_path, $data, FILE_APPEND);
+				*/
+			}
+		}
+		private function attach_inline_js($form_string, $unique_id){
+			// attach inline JS
+			$pattern															= "/<script[^>]*>(.*)<\/script>/Uis";
+			
+			preg_match_all($pattern, $form_string, $matches);
+			if(is_array($matches) && count($matches) > 0){
+				foreach($matches[1] as $script){
+					file_put_contents($this->file_path, $script, FILE_APPEND);
+				}
+			}
+			
+			if(file_exists($this->file_path)) {
+				wp_enqueue_script($this->get_name() . '_' . md5($_SERVER['REQUEST_URI']) . '_' . $unique_id, $this->file_url, array('jquery', 'gform_gravityforms'), filemtime($this->file_path), true);
+			}
+			
+			// remove inline JS
+			$pattern															= "/<script[^>]*>(.*)<\/script>/Uis";
+			
+			return preg_replace($pattern, '', $form_string);
 		}
 	}
 ?>

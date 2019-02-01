@@ -4,7 +4,7 @@
 	Plugin URI: https://straightvisions.com/
 	Description: Improves Gravity Forms in various ways.
 	Version: 1.0.8
-	Author: Matthias Reuter
+	Author: straightvisions GmbH
 	Author URI: https://straightvisions.com
 	Text Domain: sv_gravity_forms_enhancer
 	License: GPL3
@@ -17,7 +17,7 @@
 
 	class init extends \sv_core\core{
 		const version							= 1008;
-		const version_core_match				= 1005;
+		const version_core_match				= 1010;
 
 		public function __construct(){
 			$this->setup(__NAMESPACE__,__FILE__);
