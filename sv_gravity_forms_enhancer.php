@@ -17,7 +17,7 @@
 
 	class init extends \sv_core\core{
 		const version							= 1008;
-		const version_core_match				= 1005;
+		const version_core_match				= 1010;
 
 		public function __construct(){
 			$this->setup(__NAMESPACE__,__FILE__);
