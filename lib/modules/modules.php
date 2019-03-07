@@ -51,7 +51,7 @@
 			$this->settings_slugs->init();
 		}
 		public function form_start($form_string, $form){
-			wp_enqueue_script($this->get_name(), $this->get_path('lib/frontend/js/frontend.js'), array('jquery', 'gform_gravityforms'), filemtime($this->get_path('lib/frontend/js/frontend.js')), true);
+			wp_enqueue_script($this->get_name(), $this->get_url('lib/frontend/js/frontend.js'), array('jquery', 'gform_gravityforms'), filemtime($this->get_path('lib/frontend/js/frontend.js')), true);
 
 			if($this->generate_id($form)){
 				$form_string													= $this->replace_form_id($form_string, $form);
