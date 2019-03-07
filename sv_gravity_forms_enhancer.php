@@ -16,8 +16,8 @@
 	require_once('lib/core/core.php');
 
 	class init extends \sv_core\core{
-		const version							= 1100;
-		const version_core_match				= 1010;
+		const version							= 2000;
+		const version_core_match				= 3000;
 		
 		/**
 		 * @desc			Basic setup & information
