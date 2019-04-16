@@ -17,7 +17,7 @@
 
 	class init extends \sv_core\core{
 		const version							= 1304;
-		const version_core_match				= 3100;
+		const version_core_match				= 3101;
 		
 		/**
 		 * @desc			Basic setup & information
