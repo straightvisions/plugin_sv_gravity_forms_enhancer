@@ -9,6 +9,7 @@
 	Text Domain: sv_gravity_forms_enhancer
 	License: GPL3
 	License URI: https://www.gnu.org/licenses/gpl-3.0.html
+	Domain Path: /languages
 	*/
 
 	namespace sv_gravity_forms_enhancer;
