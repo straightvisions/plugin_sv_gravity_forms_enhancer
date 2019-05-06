@@ -1,12 +1,14 @@
 <?php
+	
 	/*
 	Plugin Name: SV Gravity Forms Enhancer
-	Plugin URI: https://straightvisions.com/
 	Description: Improves Gravity Forms in various ways.
-	Version: 1.3.06
+	Version: 1.3.07
+	Plugin URI: https://straightvisions.com/
 	Author: straightvisions GmbH
 	Author URI: https://straightvisions.com
 	Text Domain: sv_gravity_forms_enhancer
+	Domain Path: /languages
 	License: GPL3
 	License URI: https://www.gnu.org/licenses/gpl-3.0.html
 	Domain Path: /languages
@@ -17,8 +19,8 @@
 	require_once('lib/core/core.php');
 
 	class init extends \sv_core\core{
-		const version							= 1306;
-		const version_core_match				= 3103;
+		const version							= 1307;
+		const version_core_match				= 3110;
 		
 		/**
 		 * @desc			Basic setup & information
