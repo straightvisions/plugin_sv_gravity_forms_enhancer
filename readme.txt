@@ -2,9 +2,9 @@
 Contributors: Matthias Reuter
 Donate link: 
 Tags: gravity forms, gforms, multi instance, multiple gravity forms
-Requires at least: 4.7
-Tested up to: 5.0.3
-Stable tag: 1.1.0
+Requires at least: 5.0
+Tested up to: 5.2
+Stable tag: 1.3.10
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 7.0
@@ -16,7 +16,7 @@ Improves Gravity Forms in various ways.
 
 = Requires: =
 * PHP 7.0 or higher
-* WordPress 4.7.x or higher
+* WordPress 5.0.x or higher
 * Gravity Forms Plugin
 
 Please note that most recent version of Gravity Forms is recommended, as we will not test on older versions.
@@ -68,6 +68,10 @@ Please note that we do not support or test all extensions available for gravity 
 6. Show ZIP before City
 
 == Changelog ==
+= 1.3.10 =
+core update
+Setting to enable/disable Multi Instance Feature
+
 = 1.1.0 =
 core update
 Integrating extended features into free version
@@ -97,6 +101,10 @@ Tiny MCE Rich Text Editor (RTE) Support for multiple form instances
 Initial Release
 
 == Upgrade Notice ==
+= 1.3.10 =
+core update
+Setting to enable/disable Multi Instance Feature
+
 = 1.1.0 =
 core update
 Integrating extended features into free version
