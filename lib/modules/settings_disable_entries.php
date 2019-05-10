@@ -13,7 +13,7 @@
 	class settings_disable_entries extends modules{
 		public function __construct(){
 			$this->set_section_title('Disable Entry Creation');
-			$this->set_section_desc	('Following GDPR, you may want to disable entry creation on form submission.');
+			$this->set_section_desc	('Following GDPR, you may want to disable entry creation on form submission. If a form has file upload fields, this feature will be not be applied on that form.');
 			$this->set_section_type('settings');
 		}
 
@@ -59,7 +59,8 @@
 			if(class_exists('\GFAPI')) {
 				if ($this->s['disable_entries_' . $form['id']]->run_type()->get_data() == '1') {
 					$fields = \GFCommon::get_fields_by_type($form, array('fileupload', 'post_image'));
-					if (!is_array($fields)) {
+					
+					if (is_array($fields)) { // delete only if no uploads are made
 						return;
 					}
 					\GFAPI::delete_entry($entry['id']);
