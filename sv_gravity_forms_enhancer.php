@@ -1,21 +1,25 @@
 <?php
 	
-	/*
-	Plugin Name: SV Gravity Forms Enhancer
-	Description: Improves Gravity Forms in various ways.
-	Version: 1.3.08
-	Plugin URI: https://straightvisions.com/
-	Author: straightvisions GmbH
-	Author URI: https://straightvisions.com
-	Text Domain: sv_gravity_forms_enhancer
-	Domain Path: /languages
-	License: GPL3
-	License URI: https://www.gnu.org/licenses/gpl-3.0.html
-	Domain Path: /languages
-	*/
+/*
+Plugin Name: SV Gravity Forms Enhancer
+Description: Improves Gravity Forms in various ways.
+Version: 1.3.09
+Plugin URI: https://straightvisions.com/
+Author: straightvisions GmbH
+Author URI: https://straightvisions.com
+Text Domain: sv_gravity_forms_enhancer
+Domain Path: /languages
+License: GPL3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Domain Path: /languages
+*/
 
-	namespace sv_gravity_forms_enhancer;
+namespace sv_gravity_forms_enhancer;
 
+$min_php = '7.0.0';
+$name = 'SV Gravity Forms Enhancer';
+
+if(version_compare( phpversion(), $min_php, '>=' )) {
 	require_once('lib/core/core.php');
 
 	class init extends \sv_core\core{
@@ -29,7 +33,10 @@
 		 * @since			1.0
 		 */
 		public function __construct(){
-			$this->setup(__NAMESPACE__,__FILE__);
+			if(!$this->setup( __NAMESPACE__, __FILE__ )){
+				return false;
+			}
+
 			$this->set_section_title('SV Gravity Forms Enhancer');
 			$this->set_section_desc('Improves Gravity Forms in various ways');
 			$this->set_section_privacy('<p>
@@ -40,3 +47,9 @@
 	}
 
 	$GLOBALS[__NAMESPACE__]			= new init();
+}else{
+	require_once('lib/core/php_version.php');
+	add_action('init', function(){
+		\deactivate_plugins(plugin_basename( __FILE__ ) );
+	});
+}
