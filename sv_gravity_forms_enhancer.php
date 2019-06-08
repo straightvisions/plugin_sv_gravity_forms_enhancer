@@ -16,12 +16,12 @@
 	namespace sv_gravity_forms_enhancer;
 
 	$min_php = '7.0.0';
-	$name = 'SV ProvenExpert';
+	$name = 'SV Gravity Forms Enhancer';
 
 	if(version_compare( phpversion(), $min_php, '>=' )) {
 		class init extends \sv_core\core{
 			const version							= 1310;
-			const version_core_match				= 3126;
+			const version_core_match				= 3127;
 
 			/**
 			 * @desc			Basic setup & information
