@@ -43,4 +43,9 @@
 		}
 
 		$GLOBALS[__NAMESPACE__]			= new init();
+	}else{
+		require_once('lib/core/php_version.php');
+		add_action('init', function(){
+			\deactivate_plugins(plugin_basename( __FILE__ ) );
+		});
 	}
