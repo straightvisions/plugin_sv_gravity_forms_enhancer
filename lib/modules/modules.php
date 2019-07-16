@@ -1,13 +1,4 @@
 <?php
-	/**
-	 * @author			straightvisions GmbH
-	 * @package			sv_gravity_forms_enhancer
-	 * @copyright		2017 straightvisions GmbH
-	 * @link			https://straightvisions.com/
-	 * @since			1.0
-	 * @license			See license.txt or https://straightvisions.com/
-	 */
-
 	namespace sv_gravity_forms_enhancer;
 
 	class modules extends init{
@@ -20,7 +11,7 @@
 		 * @author			straightvisions GmbH
 		 * @since			1.0
 		 */
-		protected function init(){
+		public function init(){
 			add_filter('gform_enable_field_label_visibility_settings', '__return_true');
 
 			$this->settings_multi_instances->init();
