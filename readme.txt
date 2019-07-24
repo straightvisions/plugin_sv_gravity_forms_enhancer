@@ -4,7 +4,7 @@ Donate link:
 Tags: gravity forms, gforms, multi instance, multiple gravity forms
 Requires at least: 5.0
 Tested up to: 5.2
-Stable tag: 1.3.10
+Stable tag: 1.4.01
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 7.0
