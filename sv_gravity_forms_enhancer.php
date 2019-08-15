@@ -1,6 +1,6 @@
 <?php
 /*
-Version: 1.4.01
+Version: 1.4.02
 Plugin Name: SV Gravity Forms Enhancer
 Text Domain: sv_gravity_forms_enhancer
 Description: Improves Gravity Forms in various ways.
@@ -8,8 +8,8 @@ Plugin URI: https://straightvisions.com/
 Author: straightvisions GmbH
 Author URI: https://straightvisions.com
 Domain Path: /languages
-License: GPL3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+License: GPL-3.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 */
 
 namespace sv_gravity_forms_enhancer;
