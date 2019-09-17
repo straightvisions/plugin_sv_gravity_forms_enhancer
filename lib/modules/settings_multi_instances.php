@@ -30,7 +30,8 @@ class settings_multi_instances extends modules{
 	}
 	public function init(){
 		$this->set_section_title('Multi Instances');
-		$this->set_section_desc	('You may want to use the same form more than once on a single page. You can enable this feature here, but be aware that it could be not compatible with all Gravity Forms Features.');
+		//$this->set_section_desc	('You may want to use the same form more than once on a single page. You can enable this feature here, but be aware that it could be not compatible with all Gravity Forms Features.');
+		$this->set_section_desc	('Multi GF Forms on same page.');
 		$this->set_section_type('settings');
 		$this->get_root()->add_section($this);
 		$this->load_settings();
