@@ -17,12 +17,7 @@
 
 		public function __construct(){
 			$this->set_section_title('Slugs');
-			$this->set_section_desc('
-		Form-IDs may change in your deployment-process - slugs are better.
-		Gravity Forms supports use of form title instead of ID, but once form title has been changed, you may need to update your shortcodes again.
-		We allow sanitized titles if you still want to use titles, but have issues with special chars.
-		Most save is to use slugs which map to Form-IDs and use these slugs in your shortcodes instead of IDs or titles.
-		');
+			$this->set_section_desc('Form-IDs may change in your deployment-process - slugs are better.');
 			$this->set_section_type('settings');
 		}
 

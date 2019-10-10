@@ -13,7 +13,7 @@
 	class settings_disable_entries extends modules{
 		public function __construct(){
 			$this->set_section_title('Disable Entry Creation');
-			$this->set_section_desc	('Following GDPR, you may want to disable entry creation on form submission. If a form has file upload fields, this feature will be not be applied on that form.');
+			$this->set_section_desc	('If a form has file upload fields, this feature will be not be applied on that.');
 			$this->set_section_type('settings');
 		}
 
