@@ -1,10 +1,10 @@
 === SV Gravity Forms Enhancer ===
-Contributors: Matthias Reuter
+Contributors: matthias-reuter, matthiasbathke, dennisheiden, adrianchudzynski
 Donate link: 
 Tags: gravity forms, gforms, multi instance, multiple gravity forms
 Requires at least: 5.0
-Tested up to: 5.2
-Stable tag: 1.4.03
+Tested up to: 5.3
+Stable tag: 1.4.04
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 7.0
@@ -68,6 +68,9 @@ Please note that we do not support or test all extensions available for gravity 
 6. Show ZIP before City
 
 == Changelog ==
+= 1.4.04 =
+core update
+
 = 1.4.03 =
 core update
 
@@ -104,40 +107,8 @@ Tiny MCE Rich Text Editor (RTE) Support for multiple form instances
 Initial Release
 
 == Upgrade Notice ==
-= 1.4.03 =
+= 1.4.04 =
 core update
-
-= 1.3.10 =
-core update
-Setting to enable/disable Multi Instance Feature
-
-= 1.1.0 =
-core update
-Integrating extended features into free version
-
-= 1.0.7 =
-core update
-
-= 1.0.6 =
-Compatibility Fix for gravityformsuserregistration
-
-= 1.0.5 =
-Fixes for JS caching
-
-= 1.0.4 =
-Fixes for enhanced UI feature
-
-= 1.0.3 =
-Minor PHP Warnings fixed
-
-= 1.0.2 =
-Activation Error fixed
-
-= 1.0.1 =
-Tiny MCE Rich Text Editor (RTE) Support for multiple form instances
-
-= 1.0 =
-Initial Release
 
 == Missing a feature? ==
 
