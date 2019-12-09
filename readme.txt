@@ -4,7 +4,7 @@ Donate link:
 Tags: gravity forms, gforms, multi instance, multiple gravity forms
 Requires at least: 5.0
 Tested up to: 5.3
-Stable tag: 1.4.04
+Stable tag: 1.4.05
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 7.0
@@ -68,6 +68,9 @@ Please note that we do not support or test all extensions available for gravity 
 6. Show ZIP before City
 
 == Changelog ==
+= 1.4.05 =
+core update
+
 = 1.4.04 =
 core update
 
@@ -107,7 +110,7 @@ Tiny MCE Rich Text Editor (RTE) Support for multiple form instances
 Initial Release
 
 == Upgrade Notice ==
-= 1.4.04 =
+= 1.4.05 =
 core update
 
 == Missing a feature? ==
