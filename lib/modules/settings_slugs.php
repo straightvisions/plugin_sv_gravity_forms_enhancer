@@ -56,8 +56,8 @@
 						
 						$this->titles_to_ids[sanitize_title($form['title'])] = $form['id'];
 						
-						if ($this->s['slugs_' . $form['id']]->run_type()->get_data()) {
-							$this->slugs_to_ids[$this->s['slugs_' . $form['id']]->run_type()->get_data()] = $form['id'];
+						if ($this->s['slugs_' . $form['id']]->get_data()) {
+							$this->slugs_to_ids[$this->s['slugs_' . $form['id']]->get_data()] = $form['id'];
 						}
 					}
 				}

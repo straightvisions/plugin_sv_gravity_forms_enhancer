@@ -47,7 +47,7 @@
 
 		}
 		public function run(){
-			if($this->s['auto_login']->run_type()->get_data()){
+			if($this->s['auto_login']->get_data()){
 				add_action('gform_user_registered', function($user_id, $config, $entry, $password){ if(!is_user_logged_in()){ wp_set_auth_cookie($user_id, false, ''); } }, 10, 4);
 			}
 		}

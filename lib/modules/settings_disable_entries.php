@@ -57,7 +57,7 @@
 		}
 		public function disable_entry_creation($entry, $form){
 			if(class_exists('\GFAPI')) {
-				if ($this->s['disable_entries_' . $form['id']]->run_type()->get_data() == '1') {
+				if ($this->s['disable_entries_' . $form['id']]->get_data() == '1') {
 					$fields = \GFCommon::get_fields_by_type($form, array('fileupload', 'post_image'));
 					
 					if (is_array($fields)) { // delete only if no uploads are made

@@ -43,7 +43,7 @@
 				->load_type('checkbox');
 		}
 		public function run(){
-			if($this->s['zip_before_city']->run_type()->get_data()){
+			if($this->s['zip_before_city']->get_data()){
 				add_filter('gform_address_display_format', function(){ return 'zip_before_city'; });
 			}
 		}

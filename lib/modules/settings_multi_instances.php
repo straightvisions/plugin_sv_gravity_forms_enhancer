@@ -35,7 +35,7 @@ class settings_multi_instances extends modules{
 		$this->get_root()->add_section($this);
 		$this->load_settings();
 
-		if($this->s['multi_instances']->run_type()->get_data()) {
+		if($this->s['multi_instances']->get_data()) {
 			add_filter('sv_gravity_forms_enhancer_form_start', array($this, 'sv_gravity_forms_enhancer_form_start'), 10, 2);
 			add_filter('sv_gravity_forms_enhancer_form_end', array($this, 'sv_gravity_forms_enhancer_form_end'), 10, 2);
 

@@ -58,13 +58,13 @@
 				->load_type('checkbox');
 		}
 		public function run(){
-			if($this->s['no_css']->run_type()->get_data()){
+			if($this->s['no_css']->get_data()){
 				add_filter('pre_option_rg_gforms_disable_css', '__return_true');
 			}
-			if($this->s['no_js']->run_type()->get_data()){
+			if($this->s['no_js']->get_data()){
 				add_filter('gform_disable_print_form_scripts', '__return_true');
 			}
-			if($this->s['in_footer']->run_type()->get_data()){
+			if($this->s['in_footer']->get_data()){
 				add_filter('gform_init_scripts_footer', '__return_true');
 			}
 		}
