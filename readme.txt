@@ -3,8 +3,8 @@ Contributors: matthias-reuter, matthiasbathke, dennisheiden, adrianchudzynski
 Donate link: 
 Tags: gravity forms, gforms, multi instance, multiple gravity forms
 Requires at least: 5.0
-Tested up to: 5.5.3
-Stable tag: 1.5.11
+Tested up to: 5.7.1
+Stable tag: 1.6.00
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 7.3
@@ -69,6 +69,9 @@ Please note that we do not support or test all extensions available for gravity 
 
 == Changelog ==
 
+= 1.6.00 =
+core update
+
 = 1.5.11 =
 core update
 
@@ -115,7 +118,7 @@ Initial Release
 
 == Upgrade Notice ==
 
-= 1.5.11 =
+= 1.6.00 =
 core update
 
 == Missing a feature? ==
