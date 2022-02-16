@@ -1,10 +1,10 @@
 === SV Gravity Forms Enhancer ===
-Contributors: matthias-reuter, matthiasbathke, dennisheiden, adrianchudzynski
+Contributors: matthias-reuter, matthiasbathke, dennisheiden
 Donate link: 
 Tags: gravity forms, gforms, multi instance, multiple gravity forms
 Requires at least: 5.0
-Tested up to: 5.7.1
-Stable tag: 1.6.00
+Tested up to: 5.9.0
+Stable tag: 1.8.00
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 7.3
@@ -69,6 +69,12 @@ Please note that we do not support or test all extensions available for gravity 
 
 == Changelog ==
 
+= 1.8.00 =
+core update
+
+= 1.7.00 =
+core update
+
 = 1.6.00 =
 core update
 
@@ -118,7 +124,7 @@ Initial Release
 
 == Upgrade Notice ==
 
-= 1.6.00 =
+= 1.8.00 =
 core update
 
 == Missing a feature? ==
