@@ -3,7 +3,7 @@ Contributors: matthias-reuter, matthiasbathke, dennisheiden
 Donate link: 
 Tags: gravity forms, gforms, multi instance, multiple gravity forms
 Requires at least: 5.0
-Tested up to: 5.9.3
+Tested up to: 6.0.0
 Stable tag: 1.9.00
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
