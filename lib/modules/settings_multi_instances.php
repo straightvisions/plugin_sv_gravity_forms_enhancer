@@ -83,7 +83,7 @@ class settings_multi_instances extends modules{
 	private function replace_form_id($form_string, $form){
 		// define all occurences of the original form ID that wont hurt the form input
 		$strings															= array(
-			' gform_wrapper '								 				=> ' gform_wrapper gform_wrapper_original_id_'.$form['id'].' ',
+			' gform_wrapper'								 				=> ' gform_wrapper gform_wrapper_original_id_'.$form['id'],
 			"for='choice_".$form['id'].'_'									=> "for='choice_".static::$unique_id.'_',
 			"id='choice_".$form['id'].'_'									=> "id='choice_".static::$unique_id.'_',
 			"id='label_".$form['id'].'_'									=> "id='label_".static::$unique_id.'_',
