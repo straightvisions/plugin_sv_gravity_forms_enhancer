@@ -1,6 +1,6 @@
 <?php
 /*
-Version: 1.9.00
+Version: 2.0.00
 Plugin Name: SV Gravity Forms Enhancer
 Text Domain: sv_gravity_forms_enhancer
 Description: Improves Gravity Forms in various ways.
